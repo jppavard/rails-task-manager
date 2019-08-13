@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="card">
+    <%=link_to "edit task", edit_task_path(@task)%>
+    <div class="showtitle">
+      <h1><%= @task.title %></h1>
+    </div>
+
+    <div class="showdetails">
+      <p><%= @task.details %></p>
+    </div>
+
+    <div class="inline">
+      <input type="checkbox" id="done" <%= 'checked' if @task.completed %> >
+        <p>This task is <%= 'not' if !@task.completed %> completed</p>
+    </div>
+  </div>
+  <%=link_to "Back to list", tasks_path%>
+</div>
